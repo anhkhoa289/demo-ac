@@ -1,0 +1,28 @@
+version: '3'
+services:
+  # app:
+  #   build: .
+  #   environment:
+  #     XDEBUG_CONFIG: remote_host=host.docker.internal remote_port=9090 remote_enable=1
+  #   volumes:
+  #     - ./:/var/www/html/:cached
+  #   ports:
+  #     - 7000:80
+
+  db:
+    image: mysql:8
+    platform: linux/x86_64
+    environment:
+      MYSQL_ROOT_PASSWORD: a3md9!2hdDs12343
+      MYSQL_DATABASE: heppi
+    ports:
+      - 3306:3306
+
+  db2:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: a3md9!2hdDs12343
+      POSTGRES_DB: heppi
+    ports:
+      - 5432:5432
